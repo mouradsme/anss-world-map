@@ -3,7 +3,7 @@ import $ from 'jquery'
 import "@szhsin/react-menu/dist/index.css";
 import { MenuItem, ControlledMenu, useMenuState } from "@szhsin/react-menu";
 import { addStyle } from 'js/head';
-import { get as Map } from './maps/map_58'
+import { get as Map } from './maps/World'
 
 export default function DZMap(props) {
   const { id, height, DataLinks, Overrides, Parent, options, Circles} = props; 

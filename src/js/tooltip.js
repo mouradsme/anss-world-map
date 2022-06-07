@@ -9,10 +9,14 @@ export function ttStyle(Color, ParentElem) {
 }
 export function dzTooltip(e, Wilayas, labels, Parent) {
     const ParentElem = `[data-panelid=${Parent}]`;
+    console.log(ParentElem)
+
     $(function() {
         $(e).html(`<span class="info"><div class="tt-title"></div><div class="tt-more"></div> </span>`)
-        $(ParentElem + " [id^=w]").hover(function() {
+        $(ParentElem + " [data-country]").hover(function() {
+
             let id = $(this).attr('id')
+            console.log(id)
             let name = WilayaNames[id]
             try {
                 if (id) {

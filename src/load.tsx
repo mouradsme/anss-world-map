@@ -15,7 +15,7 @@ export const InitData = (data: any, A: any, Which: number = null) => {
 			which 			= Which == null ? options.whichClass : Which,	// Which class is used for data visualization
 			MapStyler		= Styler		// Map Style (CSS)
 
-			MapData.Populate(Fields, which, options.circleLabel, options.MergeWilayas)
+			MapData.Populate(Fields, which, options.circleLabel)
 	const 	Min 			= MapData.Min, 
 		  	Max 			= MapData.Max,
 			diff 			= Max - Min, 	 // Start by calculating the spread (the difference between the highest value and the lowest value)
@@ -49,7 +49,6 @@ export const InitData = (data: any, A: any, Which: number = null) => {
 	// Meaning that each element in Ranges, will be divided into prec elements including the element itself
 	Coloring.WilayasColoring(Fields, Colors, newRanges, which, MapStyler, `${ParentElem} ${MapContainer}`, options)
 	// createLegend(Ranges, newRanges, Colors, A)
-
 	return {
 		MapStyler, 
 		Wilayas: MapData.Wilayas, 

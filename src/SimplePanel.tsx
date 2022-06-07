@@ -7,7 +7,6 @@ import { PanelProps } 					from '@grafana/data';
 import { SimpleOptions } 				from 'types'; 
 import React, { useState, useEffect }	from 'react';
 import DZMap  							from './map'
-
 import './css/controls.css'
 import svgPanZoom from 'svg-pan-zoom'
 
@@ -43,7 +42,9 @@ export const DZMapPanel: React.FC<Props> = (A) => {
 	addStyle(Load.MapStyler._Style )
 
 	useEffect(() => {
-		const s = svgPanZoom(`#${MapContainer}`)
+		const s = svgPanZoom(`#${MapContainer}`, {
+			minZoom: 0.5
+			, maxZoom: 30})
 		$(`#resetZoom-${pid}`).on('click', function() {
 			resetMap(s)
 		})
@@ -56,7 +57,6 @@ export const DZMapPanel: React.FC<Props> = (A) => {
 		})
 	}, [])
 	
-
 
  return (<>
 	<div className="title" style={{width: "100px", position: "absolute", right: 0, top: 0}}>

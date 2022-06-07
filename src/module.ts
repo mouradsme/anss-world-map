@@ -16,7 +16,7 @@ export const plugin = new PanelPlugin<SimpleOptions>(DZMapPanel)
     FieldConfigProperty.DisplayName,
     FieldConfigProperty.Mappings,
   ]
-})
+}) 
 .setPanelOptions(builder => {
   return builder
 
@@ -190,12 +190,4 @@ export const plugin = new PanelPlugin<SimpleOptions>(DZMapPanel)
         category: ["Options Additionnels"]
   
       })
-      .addBooleanSwitch ({
-          path: 'MergeWilayas',
-          name: 'Fusionner',
-          description: '',
-          defaultValue: false,
-          category: ["Options Additionnels"]
-    
-        })
 });
