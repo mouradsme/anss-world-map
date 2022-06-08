@@ -5,7 +5,7 @@ import { Coloring } 				from 'js/Coloring'
 import { Styler, createArrayOfkey } from 'js/Utils'
 import './css/legend.css'
 
-export const InitData = (data: any, A: any, Which: number = null) => {
+export const InitData = (data: any, A: any, Which: number = null, WhichCircle: number = null) => {
 	const 	Series 			= data.series, 		// Get series from Data Panel data object. Data fetched from a Database/Data Source is stored in the Series Object as a constant
 	 		Fields 			= Series[0].fields,	// Fetch Fields (classes), from the series Object
 			options			= A.options,		// Fetching Panel Options
@@ -13,9 +13,10 @@ export const InitData = (data: any, A: any, Which: number = null) => {
 			ParentElem 		= "[data-panelid='" + A.id + "'] ", 			// Current Data Panel Selector (Using Panel ID)
 	 		MapContainer 	= `#MapContainer-${A.id}`,						// Get all the panel related options set by user
 			which 			= Which == null ? options.whichClass : Which,	// Which class is used for data visualization
+			whichCircle		= WhichCircle == null ? options.circleLabel - 1 : WhichCircle,	// Which class is used for data visualization
 			MapStyler		= Styler		// Map Style (CSS)
-
-			MapData.Populate(Fields, which, options.circleLabel)
+			
+			MapData.Populate(Fields, which, whichCircle)
 	const 	Min 			= MapData.Min, 
 		  	Max 			= MapData.Max,
 			diff 			= Max - Min, 	 // Start by calculating the spread (the difference between the highest value and the lowest value)

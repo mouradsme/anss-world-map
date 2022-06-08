@@ -43,7 +43,7 @@ export const MapData = {
             if (i == 0) Min = val // If this is the start of the iterations, then set Min to the value we get from the very first wilaya 
             Min = val < Min ? val : Min // If the value is smaller than the one previously stored in Min, set Min to this new smaller value
             this.Wilayas[id.toUpperCase()] = Values // Store the Values of the wilaya inside the wilayas object identified by an id (which is the wilaya name, aka: column name from DB)	
-            this.Circles[`c${id.toUpperCase()}`] = Values[CircleLabel - 1] // Add the desired value to the Circles object, and identify it by the wilaya id
+            this.Circles[`c${id.toUpperCase()}`] = Values[CircleLabel] // Add the desired value to the Circles object, and identify it by the wilaya id
                 // Note that options.circleLabel is used here as a means to give the user control on which data should the circles represent,
 
 

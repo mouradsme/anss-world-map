@@ -9,10 +9,10 @@ function getCountry(Code){
     return CountryNames[index+1]
 }
 export default function Tooltip(props) {
-    const { Parent, id, Color, Labels, Wilayas } = props
+    const { Parent, id, Labels, Wilayas } = props
     const ParentElement = `[data-panelid='${Parent}']`
     var Tooltip =  <div id={id}>
-                    <span className="info" style={{backgroundColor: Color}}>
+                    <span className="info">
                         <div className="tt-title"></div>
                         <div className="tt-more"></div> 
                     </span>
